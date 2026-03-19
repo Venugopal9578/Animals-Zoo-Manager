@@ -2,3 +2,7 @@ requests
 tqdm
 colorama
 python-dotenv
+pandas
+jupyter
+matplotlib
+seaborn

@@ -10,10 +10,14 @@ A high-performance Python ETL (Extract, Transform, Load) tool that discovers, cl
 - **Pipeline Ready**: Uses a modern **UPSERT** (Sync) logic to merge and update data without creating duplicates.
 - **Premium CLI**: Beautiful progress bars via `tqdm` and colorized feedback via `colorama`.
 - **Targeted Sync**: Includes a curated "Seed List" of common groups for high-speed discovery.
+- **Advanced Analysis**: Integrated Jupyter Notebook for data exploration and species distribution.
+- **BI Integration**: Ready-to-use export logic for Looker Studio dashboards.
 
 ## 🛠️ Project Structure
 
 - `zoo_manager.py`: Core ETL logic, discovery engine, and database manager.
+- `export_data.py`: Data cleaning and export utility for BI tools (Looker Studio).
+- `animal_analysis.ipynb`: Interactive Jupyter Notebook for data exploration.
 - `animals.db`: SQLite database storing all discovered species.
 - `requirements.txt`: Python dependencies.
 - `.env`: (Ignored by Git) Your private API keys.
@@ -48,6 +52,20 @@ The project uses SQLite with the following columns:
 - `habitat`, `diet`, `locations`
 - `lifespan`, `weight`, `top_speed`, `color`
 - `animal_type` (Land/Water/Air)
+
+## 📊 Analysis & Visualization
+
+### 📓 Jupyter Notebook
+The project includes `animal_analysis.ipynb` which provides:
+- Distribution of species by class and family.
+- Weight and Speed correlation analysis.
+- Habitat and Diet breakdowns using Pandas & Matplotlib.
+
+### 📈 Looker Studio Dashboard
+The `export_data.py` script generates a cleaned `species_export.csv` optimized for BI:
+- **Numeric Normalization**: Auto-extracts numbers from strings like "25 mph" or "27kg - 450kg".
+- **Case-Insensitive Search**: Includes a `name_lower` field for seamless dashboard filtering.
+- **KPI Tracking**: Real-time metrics for total species and biome counts.
 
 ## 🤝 Contributing
 Feel free to open issues or submit pull requests for new features like taxonomic visualizations or more advanced categorization rules!

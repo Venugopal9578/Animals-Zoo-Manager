@@ -3,14 +3,16 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Database
+# Database & Exports
 animals.db
 animals.db-journal
+species_export.csv
 
 # Environment / Sensitive
 .env
 .checkpoint
 repair_zoo.py
+.ipynb_checkpoints/
 
 # IDEs
 .vscode/
